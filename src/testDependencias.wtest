@@ -1,0 +1,50 @@
+import vehiculos.*
+import dependencias.*
+
+
+describe "tests" {
+
+	var deportes = new Dependencia(cantidadDeEmpleados = 45)
+	var cultura = new Dependencia(cantidadDeEmpleados= 31)
+	
+	var cachito = new ChevroletCorsa(color = rojo)
+	var corsaVerde = new ChevroletCorsa(color = verde)
+	var corsaAzul = new ChevroletCorsa(color = azul)
+	var kwid1 = new RenaultKwid(tieneTanqueAdicional = true)
+	var especial1 = new AutoEspecial(color = beige, capacidad = 5, peso = 1200, velocidadMaxima = 160)
+	
+	var kwid2 = new RenaultKwid(tieneTanqueAdicional = true)
+	var kwid3 = new RenaultKwid(tieneTanqueAdicional = true)
+	var kwid4 = new RenaultKwid(tieneTanqueAdicional = false)
+	
+	
+	
+	
+	fixture {
+		
+		trafic.motor(motorBataton)
+		trafic.interior(interiorPopular)
+		
+		deportes.agregarAFlota(cachito)
+		deportes.agregarAFlota(corsaAzul)
+		deportes.agregarAFlota(corsaVerde)
+		deportes.agregarAFlota(kwid1)
+		deportes.agregarAFlota(especial1)	
+		
+		cultura.agregarAFlota(cachito)
+		cultura.agregarAFlota(kwid2)
+		cultura.agregarAFlota(kwid3)
+		cultura.agregarAFlota(kwid4)
+		cultura.agregarAFlota(trafic)
+				
+	}
+
+}
+
+
+
+test "testX" {
+
+	assert.that(true)
+
+}

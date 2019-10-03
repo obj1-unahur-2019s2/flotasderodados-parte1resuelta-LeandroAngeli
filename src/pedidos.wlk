@@ -13,11 +13,16 @@ var property coloresIncompatibles
 	}	
 
 	method puedeSatisfacerPedido(auto) {
-		return auto.velocidadMaxima() >= self.velocidadMinima() + 10 && 
-			   auto.capacidad() >= self.cantidadPasajeros() &&
-			   auto.color() / self.coloresIncompatibles()
+		return auto.velocidadMaxima() >= self.velocidadMinima() + 10 and 
+			   auto.capacidad() >= self.cantidadPasajeros() and not
+			   auto.color() == self.coloresIncompatibles()
 				
 	}
+	
+	
+	
+	
+	method relajar() { tiempoMaximo += 1}
 	
 }
 
